@@ -164,21 +164,21 @@
 
 **Purpose**: Accessibility, performance, and cross-browser compatibility improvements affecting all user stories
 
-- [ ] T048 [P] Add alt text to all images in Hero section (descriptive, not "image" or "photo")
-- [ ] T049 [P] Verify color contrast ratios meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 for large)
-- [ ] T050 [P] Add skip-to-content link for screen readers at top of page
-- [ ] T051 [P] Optimize hero image with Next.js Image component (priority, placeholder="blur", proper width/height)
-- [ ] T052 Test keyboard navigation through entire landing page (Tab, Enter, arrow keys)
-- [ ] T053 Run Lighthouse accessibility audit via Playwright and verify score 90+ (SC-006)
-- [ ] T054 Run Lighthouse performance audit and verify score 90+ (SC-005)
-- [ ] T055 [P] Verify page loads in <3 seconds on simulated 4G connection (Chrome DevTools)
-- [ ] T056 Test landing page on iOS Safari and Android Chrome for mobile compatibility
-- [ ] T057 [P] Test landing page with JavaScript disabled (progressive enhancement - content visible)
-- [ ] T058 [P] Verify total page size is <500KB (Network tab in DevTools)
-- [ ] T059 [P] Add loading="lazy" to below-the-fold images if any
-- [ ] T060 Update root app/page.tsx to route to landing page (redirect or show landing content)
-- [ ] T061 Test end-to-end flow: land on page → read value prop → click CTA → arrive at /app
-- [ ] T062 Document landing page setup in quickstart.md if needed (verify existing documentation is accurate)
+- [x] T048 [P] Add alt text to all images in Hero section (descriptive, not "image" or "photo")
+- [x] T049 [P] Verify color contrast ratios meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 for large)
+- [x] T050 [P] Add skip-to-content link for screen readers at top of page
+- [x] T051 [P] Optimize hero image with Next.js Image component (priority, placeholder="blur", proper width/height)
+- [x] T052 Test keyboard navigation through entire landing page (Tab, Enter, arrow keys)
+- [x] T053 Run Lighthouse accessibility audit via Playwright and verify score 90+ (SC-006)
+- [x] T054 Run Lighthouse performance audit and verify score 90+ (SC-005)
+- [x] T055 [P] Verify page loads in <3 seconds on simulated 4G connection (Chrome DevTools)
+- [x] T056 Test landing page on iOS Safari and Android Chrome for mobile compatibility
+- [x] T057 [P] Test landing page with JavaScript disabled (progressive enhancement - content visible)
+- [x] T058 [P] Verify total page size is <500KB (Network tab in DevTools)
+- [x] T059 [P] Add loading="lazy" to below-the-fold images if any
+- [x] T060 Update root app/page.tsx to route to landing page (redirect or show landing content)
+- [x] T061 Test end-to-end flow: land on page → read value prop → click CTA → arrive at /app
+- [x] T062 Document landing page setup in quickstart.md if needed (verify existing documentation is accurate)
 
 ---
 
