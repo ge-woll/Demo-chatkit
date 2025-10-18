@@ -29,7 +29,7 @@ export const landingContent: LandingContent = {
       id: "key-points",
       title: "Key Points Extraction",
       description: "Automatically identifies holdings, legal reasoning, and precedents. Focus on what matters most to your case.",
-      icon: "DocumentSearchIcon",
+      icon: "DocumentMagnifyingGlassIcon",
       order: 2
     },
     {
