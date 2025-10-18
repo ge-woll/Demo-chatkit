@@ -261,27 +261,8 @@ export function ChatKitPanel({
     [isWorkflowConfigured, setErrorState]
   );
 
-  const chatkit = useChatKit({
-    api: { getClientSecret },
-    theme: {
-      colorScheme: theme,
-      ...getThemeConfig(theme),
-    },
-    startScreen: {
-      greeting: GREETING,
-      prompts: STARTER_PROMPTS,
-    },
-    composer: {
-      placeholder: PLACEHOLDER_INPUT,
-      attachments: {
-        // Enable attachments
-        enabled: true,
-      },
-    },
-    threadItemActions: {
-      feedback: false,
-    },
-    onClientTool: async (invocation: {
+  const handleClientTool = useCallback(
+    async (invocation: {
       name: string;
       params: Record<string, unknown>;
     }) => {
@@ -314,20 +295,52 @@ export function ChatKitPanel({
 
       return { success: false };
     },
-    onResponseEnd: () => {
-      onResponseEnd();
+    [onThemeRequest, onWidgetAction]
+  );
+
+  const handleResponseEnd = useCallback(() => {
+    onResponseEnd();
+  }, [onResponseEnd]);
+
+  const handleResponseStart = useCallback(() => {
+    setErrorState({ integration: null, retryable: false });
+  }, [setErrorState]);
+
+  const handleThreadChange = useCallback(() => {
+    processedFacts.current.clear();
+  }, []);
+
+  const handleError = useCallback(({ error }: { error: unknown }) => {
+    // Note that Chatkit UI handles errors for your users.
+    // Thus, your app code doesn't need to display errors on UI.
+    console.error("ChatKit error", error);
+  }, []);
+
+  const chatkit = useChatKit({
+    api: { getClientSecret },
+    theme: {
+      colorScheme: theme,
+      ...getThemeConfig(theme),
     },
-    onResponseStart: () => {
-      setErrorState({ integration: null, retryable: false });
+    startScreen: {
+      greeting: GREETING,
+      prompts: STARTER_PROMPTS,
     },
-    onThreadChange: () => {
-      processedFacts.current.clear();
+    composer: {
+      placeholder: PLACEHOLDER_INPUT,
+      attachments: {
+        // Enable attachments
+        enabled: true,
+      },
     },
-    onError: ({ error }: { error: unknown }) => {
-      // Note that Chatkit UI handles errors for your users.
-      // Thus, your app code doesn't need to display errors on UI.
-      console.error("ChatKit error", error);
+    threadItemActions: {
+      feedback: false,
     },
+    onClientTool: handleClientTool,
+    onResponseEnd: handleResponseEnd,
+    onResponseStart: handleResponseStart,
+    onThreadChange: handleThreadChange,
+    onError: handleError,
   });
 
   const activeError = errors.session ?? errors.integration;
