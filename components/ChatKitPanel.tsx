@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ChatKit, useChatKit } from "@openai/chatkit-react";
 import {
   STARTER_PROMPTS,
@@ -298,10 +298,6 @@ export function ChatKitPanel({
     [onThemeRequest, onWidgetAction]
   );
 
-  const handleResponseEnd = useCallback(() => {
-    onResponseEnd();
-  }, [onResponseEnd]);
-
   const handleResponseStart = useCallback(() => {
     setErrorState({ integration: null, retryable: false });
   }, [setErrorState]);
@@ -311,33 +307,52 @@ export function ChatKitPanel({
   }, []);
 
   const handleError = useCallback(({ error }: { error: unknown }) => {
-    // Note that Chatkit UI handles errors for your users.
-    // Thus, your app code doesn't need to display errors on UI.
     console.error("ChatKit error", error);
   }, []);
 
-  const chatkit = useChatKit({
-    api: { getClientSecret },
-    theme: {
+  const themeConfig = useMemo(
+    () => ({
       colorScheme: theme,
       ...getThemeConfig(theme),
-    },
-    startScreen: {
+    }),
+    [theme]
+  );
+
+  const apiConfig = useMemo(() => ({ getClientSecret }), [getClientSecret]);
+
+  const startScreenConfig = useMemo(
+    () => ({
       greeting: GREETING,
       prompts: STARTER_PROMPTS,
-    },
-    composer: {
+    }),
+    []
+  );
+
+  const composerConfig = useMemo(
+    () => ({
       placeholder: PLACEHOLDER_INPUT,
       attachments: {
-        // Enable attachments
         enabled: true,
       },
-    },
-    threadItemActions: {
+    }),
+    []
+  );
+
+  const threadItemActionsConfig = useMemo(
+    () => ({
       feedback: false,
-    },
+    }),
+    []
+  );
+
+  const chatkit = useChatKit({
+    api: apiConfig,
+    theme: themeConfig,
+    startScreen: startScreenConfig,
+    composer: composerConfig,
+    threadItemActions: threadItemActionsConfig,
     onClientTool: handleClientTool,
-    onResponseEnd: handleResponseEnd,
+    onResponseEnd: onResponseEnd,
     onResponseStart: handleResponseStart,
     onThreadChange: handleThreadChange,
     onError: handleError,
@@ -345,16 +360,6 @@ export function ChatKitPanel({
 
   const activeError = errors.session ?? errors.integration;
   const blockingError = errors.script ?? activeError;
-
-  if (isDev) {
-    console.debug("[ChatKitPanel] render state", {
-      isInitializingSession,
-      hasControl: Boolean(chatkit.control),
-      scriptStatus,
-      hasError: Boolean(blockingError),
-      workflowId: WORKFLOW_ID,
-    });
-  }
 
   return (
     <div className="relative pb-8 flex h-[90vh] w-full rounded-2xl flex-col overflow-hidden bg-white shadow-sm transition-colors dark:bg-slate-900">
