@@ -7,7 +7,7 @@
 This repository is the simplest way to bootstrap a [ChatKit](http://openai.github.io/chatkit-js/) application. It ships with a minimal Next.js UI, the ChatKit web component, and a ready-to-use session endpoint so you can experiment with OpenAI-hosted workflows built using [Agent Builder](https://platform.openai.com/agent-builder).
 
 ## What You Get
-
+      
 - Next.js app with `<openai-chatkit>` web component and theming controls
 - API endpoint for creating a session at [`app/api/create-session/route.ts`](app/api/create-session/route.ts)
 - Config file for starter prompts, theme, placeholder text, and greeting message
