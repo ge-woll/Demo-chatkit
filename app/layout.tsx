@@ -1,4 +1,3 @@
-import Script from "next/script";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -22,10 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        <Script
-          src="https://cdn.platform.openai.com/deployments/chatkit/chatkit.js"
-          strategy="beforeInteractive"
-        />
+        {/* Preconnect to ChatKit CDN for faster loading */}
+        <link rel="preconnect" href="https://cdn.platform.openai.com" />
+        <link rel="dns-prefetch" href="https://cdn.platform.openai.com" />
       </head>
       <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
