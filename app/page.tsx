@@ -1,5 +1,8 @@
+"use client";
+
 import { Hero } from '@/components/landing/Hero';
 import { Features } from '@/components/landing/Features';
+import { CTASection } from '@/components/landing/CTASection';
 
 export default function LandingPage() {
   return (
@@ -14,6 +17,7 @@ export default function LandingPage() {
       <main id="main-content" className="min-h-screen bg-white dark:bg-slate-950">
         <Hero />
         <Features />
+        <CTASection />
       </main>
     </>
   );

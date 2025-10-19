@@ -87,15 +87,15 @@
 
 ### Implementation for User Story 2
 
-- [ ] T018 [P] [US2] Refine typography in all components using Tailwind font utilities (Inter font via next/font, proper hierarchy)
-- [ ] T019 [P] [US2] Add smooth transitions to CTA buttons (hover states, focus indicators with ring utilities)
-- [ ] T020 [US2] Implement color scheme using Tailwind slate palette (slate-900 for primary text, slate-600 for secondary)
-- [ ] T021 [US2] Add subtle animations to hero section (fade-in on load using CSS transitions, optional)
-- [ ] T022 [US2] Verify responsive breakpoints in Hero.tsx (320px: single column, 768px: 2-col, 1024px+: side-by-side)
-- [ ] T023 [US2] Add focus states for keyboard navigation (visible focus rings on all interactive elements)
-- [ ] T024 [US2] Optimize spacing and padding for visual balance (px-4 lg:px-8, py-16, consistent gap-4 to gap-8)
-- [ ] T025 [US2] Test dark mode support using useColorScheme hook from existing hooks/useColorScheme.ts
-- [ ] T026 [US2] Verify professional appearance on Chrome, Safari, Firefox, and Edge browsers
+- [x] T018 [P] [US2] Refine typography in all components using Tailwind font utilities (Inter font via next/font, proper hierarchy)
+- [x] T019 [P] [US2] Add smooth transitions to CTA buttons (hover states, focus indicators with ring utilities)
+- [x] T020 [US2] Implement color scheme using Tailwind slate palette (slate-900 for primary text, slate-600 for secondary)
+- [x] T021 [US2] Add subtle animations to hero section (fade-in on load using CSS transitions, optional)
+- [x] T022 [US2] Verify responsive breakpoints in Hero.tsx (320px: single column, 768px: 2-col, 1024px+: side-by-side)
+- [x] T023 [US2] Add focus states for keyboard navigation (visible focus rings on all interactive elements)
+- [x] T024 [US2] Optimize spacing and padding for visual balance (px-4 lg:px-8, py-16, consistent gap-4 to gap-8)
+- [x] T025 [US2] Test dark mode support using useColorScheme hook from existing hooks/useColorScheme.ts
+- [x] T026 [US2] Verify professional appearance on Chrome, Safari, Firefox, and Edge browsers
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work - landing page has clear value prop AND modern, professional design
 
@@ -115,15 +115,15 @@
 
 ### Implementation for User Story 3
 
-- [ ] T027 [P] [US3] Verify primary CTA in Hero component links to /app route with proper Next.js Link component
-- [ ] T028 [P] [US3] Ensure CTA is above fold on mobile (320px min-width) in Hero section
-- [ ] T029 [US3] Add large touch targets to CTA buttons (min-h-12 for 48px height, px-8 for width)
-- [ ] T030 [US3] Create additional CTA section at components/landing/CTASection.tsx for bottom of page
-- [ ] T031 [US3] Add CTASection to landing page route after Features section
-- [ ] T032 [US3] Style CTASection with compelling copy ("Ready to save time? Start summarizing now")
-- [ ] T033 [US3] Verify CTAs work with keyboard navigation (Tab key to focus, Enter to activate)
-- [ ] T034 [US3] Test CTA click tracking (console.log for analytics event or Vercel Analytics integration)
-- [ ] T035 [US3] Verify smooth navigation from landing page to /app without errors
+- [x] T027 [P] [US3] Verify primary CTA in Hero component links to /app route with proper Next.js Link component
+- [x] T028 [P] [US3] Ensure CTA is above fold on mobile (320px min-width) in Hero section
+- [x] T029 [US3] Add large touch targets to CTA buttons (min-h-12 for 48px height, px-8 for width)
+- [x] T030 [US3] Create additional CTA section at components/landing/CTASection.tsx for bottom of page
+- [x] T031 [US3] Add CTASection to landing page route after Features section
+- [x] T032 [US3] Style CTASection with compelling copy ("Ready to save time? Start summarizing now")
+- [x] T033 [US3] Verify CTAs work with keyboard navigation (Tab key to focus, Enter to activate)
+- [x] T034 [US3] Test CTA click tracking (console.log for analytics event or Vercel Analytics integration)
+- [x] T035 [US3] Verify smooth navigation from landing page to /app without errors
 
 **Checkpoint**: All CTAs should navigate successfully to application, conversion path is clear and accessible
 
@@ -164,21 +164,21 @@
 
 **Purpose**: Accessibility, performance, and cross-browser compatibility improvements affecting all user stories
 
-- [x] T048 [P] Add alt text to all images in Hero section (descriptive, not "image" or "photo")
-- [x] T049 [P] Verify color contrast ratios meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 for large)
-- [x] T050 [P] Add skip-to-content link for screen readers at top of page
-- [x] T051 [P] Optimize hero image with Next.js Image component (priority, placeholder="blur", proper width/height)
-- [x] T052 Test keyboard navigation through entire landing page (Tab, Enter, arrow keys)
-- [x] T053 Run Lighthouse accessibility audit via Playwright and verify score 90+ (SC-006)
-- [x] T054 Run Lighthouse performance audit and verify score 90+ (SC-005)
-- [x] T055 [P] Verify page loads in <3 seconds on simulated 4G connection (Chrome DevTools)
-- [x] T056 Test landing page on iOS Safari and Android Chrome for mobile compatibility
-- [x] T057 [P] Test landing page with JavaScript disabled (progressive enhancement - content visible)
-- [x] T058 [P] Verify total page size is <500KB (Network tab in DevTools)
-- [x] T059 [P] Add loading="lazy" to below-the-fold images if any
-- [x] T060 Update root app/page.tsx to route to landing page (redirect or show landing content)
-- [x] T061 Test end-to-end flow: land on page → read value prop → click CTA → arrive at /app
-- [x] T062 Document landing page setup in quickstart.md if needed (verify existing documentation is accurate)
+- [ ] T048 [P] Add alt text to all images in Hero section (descriptive, not "image" or "photo")
+- [ ] T049 [P] Verify color contrast ratios meet WCAG 2.1 AA (4.5:1 for normal text, 3:1 for large)
+- [ ] T050 [P] Add skip-to-content link for screen readers at top of page
+- [ ] T051 [P] Optimize hero image with Next.js Image component (priority, placeholder="blur", proper width/height)
+- [ ] T052 Test keyboard navigation through entire landing page (Tab, Enter, arrow keys)
+- [ ] T053 Run Lighthouse accessibility audit via Playwright and verify score 90+ (SC-006)
+- [ ] T054 Run Lighthouse performance audit and verify score 90+ (SC-005)
+- [ ] T055 [P] Verify page loads in <3 seconds on simulated 4G connection (Chrome DevTools)
+- [ ] T056 Test landing page on iOS Safari and Android Chrome for mobile compatibility
+- [ ] T057 [P] Test landing page with JavaScript disabled (progressive enhancement - content visible)
+- [ ] T058 [P] Verify total page size is <500KB (Network tab in DevTools)
+- [ ] T059 [P] Add loading="lazy" to below-the-fold images if any
+- [ ] T060 Update root app/page.tsx to route to landing page (redirect or show landing content)
+- [ ] T061 Test end-to-end flow: land on page → read value prop → click CTA → arrive at /app
+- [ ] T062 Document landing page setup in quickstart.md if needed (verify existing documentation is accurate)
 
 ---
 
