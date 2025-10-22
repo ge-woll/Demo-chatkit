@@ -7,15 +7,35 @@ export const CREATE_SESSION_ENDPOINT = "/api/create-session";
 
 export const STARTER_PROMPTS: StartScreenPrompt[] = [
   {
-    label: "What can you do?",
-    prompt: "What can you do?",
-    icon: "circle-question",
+    label: "Om Business Kolding",
+    prompt: "Fortæl kort om Business Kolding, og hvad I kan hjælpe med.",
+    icon: "circle-info",
+  },
+  {
+    label: "Direktør",
+    prompt: "Hvem er direktør i Business Kolding?",
+    icon: "circle-info",
+  },
+  {
+    label: "Kommende events",
+    prompt: "Hvilke kommende arrangementer har I inden for ESG, grøn omstilling eller ligneden?",
+    icon: "calendar-days",
+  },
+  {
+    label: "Iværksætteri",
+    prompt: "Hvordan kan jeg få hjælp som iværksætter?",
+    icon: "lightbulb",
+  },
+  {
+    label: "Kontakt",
+    prompt: "Hvordan kontakter jeg jer, og hvad er åbningstiderne?",
+    icon: "message",
   },
 ];
 
-export const PLACEHOLDER_INPUT = "Ask anything...";
+export const PLACEHOLDER_INPUT = "Skriv dit spørgsmål…";
 
-export const GREETING = "How can I help you today?";
+export const GREETING = "Hvordan kan vi hjælpe dig?";
 
 export const getThemeConfig = (theme: ColorScheme): ThemeOption => ({
   color: {
