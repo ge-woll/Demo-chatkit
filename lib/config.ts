@@ -6,11 +6,9 @@ export const WORKFLOW_ID =
 export const CREATE_SESSION_ENDPOINT = "/api/create-session";
 
 export const STARTER_PROMPTS: StartScreenPrompt[] = [
-  {
-    label: "What can you do?",
-    prompt: "What can you do?",
-    icon: "circle-question",
-  },
+  { label: "Redactar escrito al SAT", prompt: "Ayúdame a redactar un escrito al SAT solicitando la línea de captura para regularizarme dentro de un acuerdo conclusivo. Tono formal y estructura jurídica.", icon: "file-text" },
+  { label: "Recursos y plazos", prompt: "¿Cuáles son los plazos y requisitos para interponer un recurso de revocación ante el SAT en México? Responde claro y con fundamento.", icon: "scale" },
+  { label: "Mejorar redacción", prompt: "Mejora este texto con estilo técnico, formal y breve: ", icon: "wand-magic" },
 ];
 
 export const PLACEHOLDER_INPUT = "Ask anything...";
